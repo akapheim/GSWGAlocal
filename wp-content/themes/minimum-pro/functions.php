@@ -249,3 +249,12 @@ function custom_header_inline_logo( $title, $inside, $wrap ) {
 	return sprintf( '<%1$s %2$s>%3$s</%1$s>', $wrap, genesis_attr( 'site-title' ), $inside );
 
 }
+
+//* Customize the entire footer
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'sp_custom_footer' );
+function sp_custom_footer() {
+	?>
+	<p>&copy; Copyright 2015 <a href="http://www.gswga.com/">GSWGA</a> &middot; All Rights Reserved &middot; </p>
+	<?php
+}
